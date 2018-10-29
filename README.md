@@ -14,6 +14,6 @@ conda install --yes --file requirements.txt
 ```
 3. Run the app.
 ```
-python app.py
+python main.py
 ```
 ![alt text](https://github.com/SzefKuchni/cities-dl/blob/master/app_image.PNG)
