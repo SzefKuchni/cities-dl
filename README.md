@@ -16,5 +16,5 @@ conda install --yes --file conda_requirements.txt
 ```
 python app.py
 ```
-Inline-style: 
-![]("app_image.PNG)
+
+![]("app_image.PNG")
