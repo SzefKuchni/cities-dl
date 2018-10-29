@@ -6,13 +6,13 @@ Behind the app there is a CNN network (VGG16) fine tuned to recognize cities.
 ```
 conda create -n myenv python=3.5
 ```
-2. Install all required packages.
+2. cd into the directory of the repo. Install all required packages.
 ```
 conda config --append channels conda-forge
 conda config --append channels menpo
-conda install --yes --file conda_requirements.txt
+conda install --yes --file requirements.txt
 ```
-3. cd into the directory of the repo. Run the app.
+3. Run the app.
 ```
 python app.py
 ```
