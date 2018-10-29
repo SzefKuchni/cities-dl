@@ -46,8 +46,35 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div([
-    dcc.Input(id='my-id', value='https://cdn.londonandpartners.com/visit/general-london/areas/river/76709-640x360-houses-of-parliament-and-london-eye-on-thames-from-above-640.jpg', type='text'),
-    html.Img(id='my-div'),
+   
+	dcc.Markdown('''
+    ## City clasifier
+    '''.replace('  ', '')),
+	
+	dcc.Input(id='my-id', value='https://cdn.londonandpartners.com/visit/general-london/areas/river/76709-640x360-houses-of-parliament-and-london-eye-on-thames-from-above-640.jpg', type='text'),
+	
+	dcc.Markdown('''
+    Enter above link to an image of a city. 
+	The app will clasify what city it is.
+	
+	What cities does the app know?
+	
+	* London
+	* Singapur
+	* Toronto
+	* Sydney
+	* New York
+	* Chicago
+	* Melbourne
+	* Los Angeles
+	* Miami
+	* San Francisco
+	
+    '''.replace('  ', ''),
+    containerProps={'style': {'maxWidth': '650px'}}),
+
+    html.Img(id='my-div', width='650px'),
+	
 	html.Div(id='my-div2')
 ])
 
@@ -69,7 +96,7 @@ def update_output_img(input_value):
 	img = cv2.imdecode(arr, -1)
 	img = cv2.resize(img, (224,224))
 	pred = model.predict(np.expand_dims(img, axis=0))
-	return dict_num_cities[np.argmax(pred)]
+	return str(dict_num_cities[np.argmax(pred)]) + " (probability: " + str(pred[0][np.argmax(pred)]) + ")"
 
 
 if __name__ == '__main__':
