@@ -16,5 +16,4 @@ conda install --yes --file conda_requirements.txt
 ```
 python app.py
 ```
-
-![]("app_image.PNG")
+![alt text](https://github.com/SzefKuchni/cities-dl/blob/master/app_image.PNG)
